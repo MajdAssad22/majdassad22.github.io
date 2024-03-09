@@ -2,10 +2,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Comming Soon!</h1>
-        
+    <div>
+      <header className='h-screen flex items-center justify-center bg-dark'>
+        <h1 className='p-10 text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-t from-dark to-light scale-90 hover:scale-100 transition-all ease-in-out duration-300'>Coming Soon!</h1>
       </header>
     </div>
   );
