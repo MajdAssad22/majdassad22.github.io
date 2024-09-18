@@ -9,19 +9,19 @@ import './App.css';
 import HomePage from './pages/home-page';
 import AboutPage from './pages/about-page';
 import ContactPage from './pages/contact-page';
+import PortfolioPage from './pages/portfolio-page';
 
 // Components
 import Loader from './components/loader';
 import MainLayout from './components/main-layout';
-import PortfolioPage from './pages/portfolio-page';
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
   useLayoutEffect(() => {
     document.documentElement.scrollTo(0, 0);
   }, [location.pathname]);
-  return children
-}
+  return children;
+};
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -33,23 +33,23 @@ function App() {
   }, []);
 
   return (
-    <div className='bg-dark'>
+    <div className="bg-dark">
       {loading ? (
-        <Loader isScreenLoader={true}/>
+        <Loader isScreenLoader={true} />
       ) : (
         <BrowserRouter>
           <Wrapper>
             <Routes>
-              <Route path='/' element={<MainLayout/>}>
+              <Route path="/" element={<MainLayout />}>
                 <Route index element={<HomePage />} />
               </Route>
-              <Route path='/about' element={<MainLayout/>}>
+              <Route path="/about" element={<MainLayout />}>
                 <Route index element={<AboutPage />} />
               </Route>
-              <Route path='/contact' element={<MainLayout/>}>
+              <Route path="/contact" element={<MainLayout />}>
                 <Route index element={<ContactPage />} />
               </Route>
-              <Route path='/portfolio' element={<MainLayout/>}>
+              <Route path="/portfolio" element={<MainLayout />}>
                 <Route index element={<PortfolioPage />} />
               </Route>
             </Routes>
